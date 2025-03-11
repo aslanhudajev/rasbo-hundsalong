@@ -1,0 +1,552 @@
+---
+title: "Trädfällning, Arborist- & Grönyteservice i Uppsala - Professionell Kvalitet & Effektivitet | Kilen of Sweden Entreprenad"
+description: "Meta description for the page"
+preloadImg: "/assets/images/landing.jpg"
+permalink: "/"
+tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+eleventyNavigation:
+    key: Hem
+    order: 100
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/local.css" />
+    <link rel="stylesheet" href="/assets/css/critical.css" />
+
+    <!-- Script for Netlify Identity -->
+    <script
+        defer
+        src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+    ></script>
+    <script defer>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+
+    <!-- JSON Schema Markup -->
+    <!-- prettier-ignore-start -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "{{ client.name }}",
+            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+            {% if client.email %}"email": "{{ client.email }}",{% endif %}
+            {% if client.address %}
+                "address": {
+                    "@type": "PostalAddress"{% if client.address.lineOne %},
+                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+                    {% endif %}
+                    {% if client.address.city %},
+                        "addressLocality": "{{ client.address.city }}"
+                    {% endif %}
+                    {% if client.address.state %},
+                        "addressRegion": "{{ client.address.state }}"
+                    {% endif %}
+                    {% if client.address.zip %},
+                        "postalCode": "{{ client.address.zip }}"
+                    {% endif %}
+                    {% if client.address.country %},
+                        "addressCountry": "{{ client.address.country }}"
+                    {% endif %}
+                },
+            {% endif %}
+            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+            {% if client.socials %}
+                "sameAs": [{% for platform, url in client.socials %}
+                        {% if not loop.first %},{% endif %}
+                        "{{ url }}"
+                    {% endfor %}]
+            {% endif %}
+        }
+    </script>
+    <!-- prettier-ignore-end -->
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    Hero                      -->
+    <!-- ============================================ -->
+
+    <section id="hero">
+        <div class="cs-container">
+            <div class="cs-flex-group">
+                <span class="cs-topper">{{ hero.topTitle }}</span>
+                <h1 class="cs-title">{{ hero.title }}</h1>
+                <p class="cs-text">{{ hero.subTitle }}</p>
+                <a href="/tjänster" class="cs-button-solid">Våra tjänster</a>
+                <a href="https://forms.fillout.com/t/v6aK5U7N6vus" class="cs-button-transparent">
+                    <img
+                        class="cs-img"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
+                        alt="play icon"
+                        width="17"
+                        height="17"
+                    />
+                    Gratis offert
+                </a>
+            </div>
+        </div>
+
+        <!-- Background Image -->
+        <picture class="cs-picture">
+            <source
+                media="(max-width: 600px)"
+                srcset="{{ hero.imageMobile }}"
+            />
+            <source media="(min-width: 601px)" srcset="{{ hero.image }}" />
+            <img
+                aria-hidden="true"
+                decoding="async"
+                src="{{ hero.image }}"
+                alt="trädgårdsservice i världsklass"
+                width="2500"
+                height="1667"
+                loading="eager"
+            />
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services" class="services">
+        <!-- Get Icons From flaticon.com -->
+        {%- from 'components/service.html' import service %}
+        {{ service(hero.services[0]) }}
+        {{ service(hero.services[1]) }}
+        {{ service(hero.services[2]) }}
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="{{ about.imageMobile }}"
+                    />
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="{{ about.image }}"
+                    />
+                    <img
+                        aria-hidden="true"
+                        decoding="async"
+                        src="{{ about.image }}"
+                        alt="cabinets"
+                        loading="lazy"
+                        width="400"
+                        height="563"
+                    />
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="{{ about.imageSecondaryMobile }}"
+                    />
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="{{ about.imageSecondary }}"
+                    />
+                    <img
+                        aria-hidden="true"
+                        decoding="async"
+                        src="{{ about.imageSecondary }}"
+                        alt="house"
+                        loading="lazy"
+                        width="400"
+                        height="563"
+                    />
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">{{ about.topTitle }}</span>
+                <h2 class="cs-title">{{ about.title }}</h2>
+                <p class="cs-text">{{ about.text[0] }}</p>
+                <!-- <p class="cs-text">{{ about.text[1] }}</p> -->
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">{{ about.quote }}</p>
+                    <span class="cs-name">{{ about.quoteName }}</span>
+                    <span class="cs-job">{{ about.quotePosition }}</span>
+                    <img
+                        class="cs-quote-icon"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+                        alt="gavel"
+                        width="136"
+                        height="77"
+                    />
+                </div>
+                <a href="/om-oss" class="cs-button-solid">Mer om oss</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--            Extra Content To Rank             -->
+    <!-- ============================================ -->
+
+    <section id="sbs-r">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="/assets/images/arborist8-m.webp"
+                    />
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="/assets/images/arborist8.jpg"
+                    />
+                    <img
+                        aria-hidden="true"
+                        decoding="async"
+                        src="/assets/images/arborist8.jpg"
+                        alt="house"
+                        loading="lazy"
+                        width="400"
+                        height="560"
+                    />
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="/assets/images/gard3-m.webp"
+                    />
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="/assets/images/gard3.jpg"
+                    />
+                    <img
+                        aria-hidden="true"
+                        decoding="async"
+                        src="/assets/images/gard3.jpg"
+                        alt="house"
+                        loading="lazy"
+                        width="400"
+                        height="560"
+                    />
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">En entreprenad för alla</span>
+                <h2 class="cs-title">Kompletta Trädgårdstjänster och Arboristlösningar i Uppsala</h2>
+                <p class="cs-text">
+                    Vi erbjuder ett brett utbud av professionella trädgårdstjänster för både privatpersoner och företag i Uppsala. Våra tjänster omfattar gräsklippning, häckklipppning, beskärning, ogräsrensning, slyröjning och plantering av blommor och träd. Vi hjälper även med bortforsling av sly, fallfrukt och erbjuder nyanläggning av trädgårdar och grönytor för att skapa en vacker och funktionell utomhusmiljö. Vårt team är certifierade och erfarna inom arboristtjänster som trädbeskärning, trädfällning, stubbfräsning, trädplantering och hälsobedömning av träd.
+                </p>
+                <p class="cs-text">
+                    Som en del av vårt utbud erbjuder vi även högkvalitativ svensk ved, inklusive ved från barrträd, lövträd och fruktträd. Vi tillhandahåller vedklyvning och säker vedleverans direkt till din dörr, för både privatpersoner och företag. Vi ser till att din trädgård och utemiljö är i bästa skick genom att kombinera vårt kunnande inom trädgårdsskötsel och arboristtjänster med hållbara och effektiva lösningar.
+                </p>
+                <a href="/blogg" class="cs-button-solid">Läs vår blogg</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Gallery                    -->
+    <!-- ============================================ -->
+
+    <section id="gallery">
+        <div class="cs-container">
+            <span class="cs-topper">Vår portfolio</span>
+            <h2 class="cs-title">
+                Inspiration från våra tidigare projekt
+            </h2>
+            <div class="cs-image-group">
+                <!-- Row 1-->
+                <div class="cs-row cs-row-1">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/gard5-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/gard5.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/gard5.jpg"
+                            alt="new hallway"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/grasmatta2-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/grasmatta2.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/grasmatta2.jpg"
+                            alt="new home construction"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/grasmatta1-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/grasmatta1.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/grasmatta1.jpg"
+                            alt="building a new wall"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                </div>
+                <!-- Row 2 -->
+                <div class="cs-row cs-row-2">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/arborist9-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/arborist9.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/arborist9.jpg"
+                            alt="new kitchen"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/arborist12-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/arborist12.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/arborist12.jpg"
+                            alt="apartment addition"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/arborist5-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/arborist5.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/arborist5.jpg"
+                            alt="kew kitchen cabinets"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                </div>
+                <!-- Row 3 -->
+                <div class="cs-row cs-row-3">
+                    <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
+                    <picture class="cs-picture cs-picture1">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/gard6-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/gard6.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/gard6.jpg"
+                            alt="new kitchen"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                    <picture class="cs-picture cs-picture2">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/grasmatta3-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/grasmatta3.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/grasmatta3.jpg"
+                            alt="apartment addition"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                    <picture class="cs-picture cs-picture3">
+                        <source
+                            media="(max-width: 600px)"
+                            srcset="/assets/images/portfolio/arborist14-m.webp"
+                        />
+                        <source
+                            media="(min-width: 601px)"
+                            srcset="/assets/images/portfolio/arborist14.jpg"
+                        />
+                        <img
+                            aria-hidden="true"
+                            decoding="async"
+                            src="/assets/images/portfolio/arborist14.jpg"
+                            alt="kew kitchen cabinets"
+                            loading="lazy"
+                            width="400"
+                            height="560"
+                        />
+                    </picture>
+                </div>
+            </div>
+            <a href="/kontakt" class="cs-button-solid">Ta kontakt</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Reviews                    -->
+    <!-- ============================================ -->
+
+    <section id="reviews">
+        <div class="cs-container">
+            <span class="cs-topper">Våra omdömen</span>
+            <h2 class="cs-title">Några ord från våra kunder</h2>
+            <p class="cs-text">
+                Vi är stolta över att få göra skillnad i våra kunders trädgårdar. Här delar några av våra nöjda kunder med sig av sina upplevelser och resultat.
+            </p>
+            <ul class="cs-card-group">
+                <!-- Review 1 -->
+                <li class="cs-item">
+                    <!-- <img
+                        class="cs-item-img"
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile5.png"
+                        alt="profile picture"
+                        width="80"
+                        height="80"
+                    /> -->
+                    <p class="cs-item-p">
+                        Extremt nöjd med allt! Kommunikation, utförande, bemötande. Allt var 100%
+                        toppklass! Kan varmt rekommendera Kilen!
+                    </p>
+                    <span class="cs-reviewer">
+                        Jan
+                        <span class="cs-desc">Österåker</span>
+                    </span>
+                    <img
+                        class="cs-item-stars"
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                        alt="stars"
+                        width="96"
+                        height="16"
+                    />
+                </li>
+                <!-- Review 2 -->
+                <li class="cs-item">
+                    <!-- <img
+                        class="cs-item-img"
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
+                        alt="profile picture"
+                        width="80"
+                        height="80"
+                    /> -->
+                    <p class="cs-item-p">
+                        Jag kan varmt rekommendera Kilen. Jobbet utfördes helt enligt mina önskemål.
+                        Förutom ett professionellt utfört arbete ett mycket trevligt bemötande. Jag är helnöjd
+                    </p>
+                    <span class="cs-reviewer">
+                        Lars
+                        <span class="cs-desc">Storvreta</span>
+                    </span>
+                    <img
+                        class="cs-item-stars"
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
+                        alt="stars"
+                        width="96"
+                        height="16"
+                    />
+                </li>
+            </ul>
+            <a
+                aria-label="read more reviews"
+                href="/omdömen"
+                class="cs-button-solid"
+                >Alla omdömen</a
+            >
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+{% endblock %}

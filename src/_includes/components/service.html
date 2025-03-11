@@ -1,0 +1,20 @@
+<!-- ============================================ -->
+<!--                 Service Card                 -->
+<!-- ============================================ -->
+
+{% macro service(props) %}
+    <div class="card">
+        <picture>
+            <img
+                aria-hidden="true"
+                decoding="async"
+                src="{{ props.icon }}"
+                alt="appliance"
+                width="48"
+                height="48"
+            />
+        </picture>
+        <h2>{{ props.title }}</h2>
+        <p>{{ props.subTitle }}</p>
+    </div>
+{% endmacro %}

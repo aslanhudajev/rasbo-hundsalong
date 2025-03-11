@@ -1,0 +1,94 @@
+<!-- ============================================ -->
+<!--                   Footer                     -->
+<!-- ============================================ -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="left-section">
+            <a class="logo" href="/"
+                ><img
+                    loading="lazy"
+                    decoding="async"
+                    src="/assets/svgs/kos-logo.svg"
+                    alt="logo"
+                    width="264"
+                    height="78"
+            /></a>
+            <p>
+                Kilen Entreprenad AB <br>
+                559477-3169 <br>
+                Godkänd för F-skatt <br>
+                VAT-nummer: SE559477316901
+            </p>
+        </div>
+        <div class="right-section">
+            <div class="lists">
+                <ul>
+                    <li>
+                        <h2>Information</h2>
+                    </li>
+                    <li>
+                        <a href="/">Hem</a>
+                    </li>
+                    <li>
+                        <a href="/tjänster">Våra tjänster</a>
+                    </li>
+                    <li>
+                        <a href="/omdömen">Omdömen</a>
+                    </li>
+                    <li>
+                        <a href="/blogg">Blogg</a>
+                    </li>
+                    <li>
+                        <a href="/om-oss">Om oss</a>
+                    </li>
+                    <li>
+                        <a href="/kontakt">Kontakt</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>Tjänster</h2>
+                    </li>
+                    <li>
+                        <a href="/tjänster/grönyteskötsel">Grönyteskötsel</a>
+                    </li>
+                    <li>
+                        <a href="/tjänster/trädbeskärning-och-arboristtjänster">Trädbeskärning och arboristtjänster</a>
+                    </li>
+                    <li>
+                        <a href="/tjänster/vedförsäljning">Vedförsäljning</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>Kontakt</h2>
+                    </li>
+                    <li>
+                        <a href="/contact">
+                            {{ client.address.lineOne }}<br />
+                            {{ client.address.lineTwo }}<br />
+                            {{ client.address.city }}
+                            {{ client.address.state }}
+                            {{ client.address.zip }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:{{ client.phoneForTel }}">
+                            T: {{ client.phoneFormatted }}
+                        </a>
+                    </li>
+                    <li>
+                        <a class="footer-link-special" href="mailto:{{ client.email }}">Maila oss</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="credit">
+        <span>Designad och utvecklad av</span>
+        <a href="/" target="_blank" rel="noopener">Hudson Solutions AB</a>
+        <span class="copyright"> Copyright {% year %}</span>
+    </div>
+</footer>

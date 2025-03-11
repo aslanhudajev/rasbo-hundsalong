@@ -1,0 +1,119 @@
+---
+title: "Om oss | Kilen of Sweden Entreprenad"
+description: "Lär känna Kilen of Sweden Entreprenad och vårt dedikerade team. Vi erbjuder högkvalitativa trädgårdstjänster, arboristlösningar, samt vedförsäljning i Uppsala. Med certifieringar inom både trädvård och arbetssäkerhet, ser vi till att dina projekt genomförs med omsorg och precision."
+preloadImg: "/assets/images/arbete1.jpg"
+permalink: "om-oss/"
+eleventyNavigation:
+    key: Om oss
+    order: 500
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/about.css" />
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">Om oss</h1>
+        <picture>
+            <source
+                media="(max-width: 600px)"
+                srcset="/assets/images/arbete1-m.webp"
+            />
+            <source
+                media="(min-width: 601px)"
+                srcset="/assets/images/arbete1.jpg"
+            />
+            <img
+                aria-hidden="true"
+                decoding="async"
+                src="/assets/images/arbete1.jpg"
+                alt="arbete på gård"
+                loading="eager"
+                width="2500"
+                height="1667"
+            />
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Side By Side                 -->
+    <!-- ============================================ -->
+
+    <section id="sbs">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-left">
+                <picture class="cs-picture cs-picture1">
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="{{ about.imageMobile }}"
+                    />
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="{{ about.image }}"
+                    />
+                    <img
+                        aria-hidden="true"
+                        decoding="async"
+                        src="{{ about.image }}"
+                        alt="arbete av gård"
+                        loading="lazy"
+                        width="400"
+                        height="563"
+                        
+                    />
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="{{ about.imageSecondaryMobile }}"
+                    />
+                    <source
+                        media="(min-width: 601px)"
+                        srcset="{{ about.imageSecondary }}"
+                    />
+                    <img
+                        aria-hidden="true"
+                        decoding="async"
+                        src="{{ about.imageSecondary }}"
+                        alt="gård med hus"
+                        loading="lazy"
+                        width="400"
+                        height="563"
+                    />
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-right">
+                <span class="cs-topper">{{ about.topTitle }}</span>
+                <h2 class="cs-title">{{ about.title }}</h2>
+                <p class="cs-text">{{ about.text[0] }}</p>
+                <!-- <p class="cs-text">{{ about.text[1] }}</p> -->
+                <div class="cs-flex-group">
+                    <p class="cs-flex-p">{{ about.quote }}</p>
+                    <span class="cs-name">{{ about.quoteName }}</span>
+                    <span class="cs-job">{{ about.quotePosition }}</span>
+                    <img
+                        class="cs-quote-icon"
+                        loading="lazy"
+                        decoding="async"
+                        src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
+                        alt="gavel"
+                        width="136"
+                        height="77"
+                    />
+                </div>
+                <a href="/kontakt" class="cs-button-solid">Kontakta oss</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/cta.html' %}
+{% endblock %}
