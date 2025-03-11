@@ -1,7 +1,7 @@
 {
-    "name": "hudson-kit",
+    "name": "rasbo-hundsalong",
     "version": "1.0.0",
-    "description": "Hudson Solutions AB starter kit.",
+    "description": "Rasbo Hundsalong Hemsida, skapad med Hudson Solutions AB starter kit.",
     "main": "index.js",
     "scripts": {
         "format": "prettier --write '**/*.{html,css,scss,js,json,md}'",

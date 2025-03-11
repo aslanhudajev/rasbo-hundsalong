@@ -1,27 +1,27 @@
 module.exports = {
-    topTitle: "Trädgårds- & trädtjänster i Uppsala",
-    title: "Skapa din drömträdgård med oss, med omtanke och expertis",
+    topTitle: "Professionell hundvård i Rasbo",
+    title: "Ge din hund den omsorg och vård den förtjänar",
     subTitle:
-        "Vi skapar och förverkligar din trädgårdsvision, från idé till färdigt resultat. Kilen of Sweden erbjuder trädgårdstjänster för både privatpersoner och bostadsrättsföreningar.",
-    image: "/assets/images/landing.jpg",
-    imageMobile: "/assets/images/landing.jpg",
+        "På Rasbo Hundsalong erbjuder vi allt från trimning och bad till kloklippning och pälsvård. Vi tar hand om din hund med kärlek och expertis.",
+    image: "/assets/images/hundsalong.jpg",
+    imageMobile: "/assets/images/hundsalong.jpg",
     services: [
         {
-            title: "Grönyteskötsel",
+            title: "Pälsvård och trimning",
             subTitle:
-                "Vi erbjuder gräsklippning, häckklippning och löpande trädgårdsskötsel för att hålla din utemiljö välvårdad och inbjudande.",
+                "Vi erbjuder professionell pälsvård och trimning för alla hundraser, anpassat efter din hunds behov.",
             icon: "/assets/svgs/service1.svg",
         },
         {
-            title: "Trädbeskärning och arboristtjänster",
+            title: "Bad och kloklippning",
             subTitle:
-                "Vi utför trädbeskärning och arboristtjänster för att hålla dina träd friska samt fäller oönskade träd på din tomt.",
+                "Ge din hund en skön spa-upplevelse med bad, fön och kloklippning. Vi ser till att din hund känner sig fräsch och välmående.",
             icon: "/assets/svgs/service2.svg",
         },
         {
-            title: "Vedförsäljning",
+            title: "Rådgivning och specialvård",
             subTitle:
-                "Vi erbjuder kapning och klyvning av ved av hög kvalitet, perfekt för att hålla hemmet varmt och mysigt. Dessutom levererar vi veden smidigt direkt hem till dig.",
+                "Vi erbjuder personlig rådgivning om pälsvård och kan hjälpa till med specialanpassade behandlingar för känslig hud och päls.",
             icon: "/assets/svgs/service3.svg",
         },
     ],
