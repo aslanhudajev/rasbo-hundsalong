@@ -3,8 +3,8 @@ module.exports = {
     title: "Ge din hund den omsorg och vård den förtjänar",
     subTitle:
         "På Rasbo Hundsalong erbjuder vi allt från trimning och bad till kloklippning och pälsvård. Vi tar hand om din hund med kärlek och expertis.",
-    image: "/assets/images/hundsalong.jpg",
-    imageMobile: "/assets/images/hundsalong.jpg",
+    image: "/assets/images/landing.jpg",
+    imageMobile: "/assets/images/landing-m.webp",
     services: [
         {
             title: "Klippning & Trimning",

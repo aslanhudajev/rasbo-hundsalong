@@ -366,19 +366,17 @@
             justify-content: center;
             align-items: center;
             margin: 0 auto 0 0;
-            height: 100%;
-            max-width: calc(146 / 16 * 1rem);
-            width: 40%;
-            /* prevents padding from affecting height and width */
-            box-sizing: border-box;
+            /* Reduced height for better proportion */
+            height: calc(35 / 16 * 1rem);
+            /* Increased max-width to allow for wider logos */
+            max-width: calc(300 / 16 * 1rem);
+            width: 45%;
             padding: 0;
 
             img {
                 height: 100%;
                 width: 100%;
-                /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
                 object-fit: contain;
-                /* places the image to the left edge of the parent */
                 object-position: left;
             }
         }
@@ -940,18 +938,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* margin-right auto pushes everything away from it to the right */
             margin: 0 auto 0 0;
-            height: calc(65 / 16 * 1rem);
-            max-width: calc(350 / 16 * 1rem);
-            width: 18.4%;
+            /* Reduced height for better proportion */
+            height: calc(45 / 16 * 1rem);
+            /* Increased max-width to allow for wider logos */
+            max-width: calc(400 / 16 * 1rem);
+            width: 25%;
             padding: 0;
 
             img {
                 height: 100%;
                 width: 100%;
-                /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
+                /* changed to cover to maintain aspect ratio better */
                 object-fit: contain;
+                object-position: left;
             }
         }
 
@@ -1693,5 +1693,39 @@
                 opacity: 0.8;
             }
         }
+    }
+}
+
+.cs-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none; /* Remove underline from link */
+    width: auto !important;
+}
+
+.cs-logo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--headerColor, #1a1a1a);
+    white-space: nowrap; /* Prevent text from wrapping */
+    line-height: 1; /* Ensure single line height */
+    letter-spacing: -0.02em; /* Slightly tighter letter spacing for better integration */
+}
+
+/* Prevent hover effects that might come from the parent link */
+.cs-logo:hover .cs-logo-text {
+    text-decoration: none;
+    color: var(--headerColor, #1a1a1a);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    .cs-logo-text {
+        color: var(--bodyTextColorWhite);
+    }
+
+    .cs-logo:hover .cs-logo-text {
+        color: var(--bodyTextColorWhite);
     }
 }

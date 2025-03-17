@@ -8,8 +8,8 @@ module.exports = {
     quote: "2024 tog vi klivet och startade Kilen of Sweden.",
     quoteName: "Karim Zayani",
     quotePosition: "",
-    image: "/assets/images/gravarbete1.jpg",
-    imageMobile: "/assets/images/gravarbete1-m.webp",
-    imageSecondary: "/assets/images/gard2.jpg",
-    imageSecondaryMobile: "/assets/images/gard2-m.webp",
+    image: "/assets/images/dog-grooming3.jpg",
+    imageMobile: "/assets/images/dog-grooming3-m.webp",
+    imageSecondary: "/assets/images/dog-grooming4.jpg",
+    imageSecondaryMobile: "/assets/images/dog-grooming4-m.webp",
 };
