@@ -7,22 +7,22 @@ module.exports = {
     imageMobile: "/assets/images/hundsalong.jpg",
     services: [
         {
-            title: "Pälsvård och trimning",
+            title: "Klippning & Trimning",
             subTitle:
-                "Vi erbjuder professionell pälsvård och trimning för alla hundraser, anpassat efter din hunds behov.",
-            icon: "/assets/svgs/service1.svg",
+                "Vi klipper och trimmar hundar enligt rasstandard eller dina önskemål. Bad ingår alltid. Även utställningsklippning av pudlar i mån av tid. Välkommen till vår hundsalong i Rasbo!",
+            icon: "/assets/svgs/barber-shop.svg",
         },
         {
-            title: "Bad och kloklippning",
+            title: "Bad & Pälsvård",
             subTitle:
-                "Ge din hund en skön spa-upplevelse med bad, fön och kloklippning. Vi ser till att din hund känner sig fräsch och välmående.",
-            icon: "/assets/svgs/service2.svg",
+                "Skonsamt bad och urborstning för alla hundar. Vi hjälper även till med lättare tovutredningar. Besök oss i Rasbo för en fräsch och välmående päls!",
+            icon: "/assets/svgs/soap.svg",
         },
         {
-            title: "Rådgivning och specialvård",
+            title: "Detaljvård",
             subTitle:
-                "Vi erbjuder personlig rådgivning om pälsvård och kan hjälpa till med specialanpassade behandlingar för känslig hud och päls.",
-            icon: "/assets/svgs/service3.svg",
+                "Kloklippning, tassputs och nosputs för en välvårdad look. Kloklipp och öronvård ingår alltid i våra behandlingar. Välkommen till oss i Rasbo!",
+            icon: "/assets/svgs/dog.svg",
         },
     ],
 };
