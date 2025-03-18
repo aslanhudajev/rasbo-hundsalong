@@ -285,6 +285,7 @@
                 img {
                     height: calc(48 / 16 * 1em);
                     width: calc(48 / 16 * 1em);
+                    filter: invert(1);
                 }
             }
             h2 {
