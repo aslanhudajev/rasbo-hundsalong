@@ -12,8 +12,8 @@
                     src="/assets/images/kos-logo.png"
             /></a>
             <p>
-                <b>Rasbo Hundsalong</b><br>
-                Trygg och personlig hundvård med omtanke.<br>
+                <b>Rasbo Hundsalong</b><br />
+                Trygg och personlig hundvård med omtanke.<br />
             </p>
         </div>
         <div class="right-section">
@@ -40,12 +40,11 @@
                         <h2>Kontakt</h2>
                     </li>
                     <li>
-                        <a href="{{ client.address.mapLink }}">
-                            {{ client.address.lineOne }}<br />
-                            {{ client.address.city }}<br />
-                            {{ client.address.state }}
-                            {{ client.address.zip }}
-                        </a>
+                        <a
+                            class="footer-link-special"
+                            href="mailto:{{ client.email }}"
+                            >Maila oss</a
+                        >
                     </li>
                     <li>
                         <a href="tel:{{ client.phoneForTel }}">
@@ -53,7 +52,22 @@
                         </a>
                     </li>
                     <li>
-                        <a class="footer-link-special" href="mailto:{{ client.email }}">Maila oss</a>
+                        <a href="{{ client.address.mapLink }}">
+                            {{ client.address.lineOne }}<br />
+                            {{ client.address.city }}<br />
+                            {{ client.address.zip }}
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h2>Följ oss</h2>
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.facebook.com/people/Rasbo-Hundsalong/61550681531579/"
+                            >Facebook</a
+                        >
                     </li>
                 </ul>
             </div>

@@ -378,7 +378,7 @@
   }
   #gallery-973 .cs-image {
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 3/4;
     /* clips the image corners */
     overflow: hidden;
     display: block;

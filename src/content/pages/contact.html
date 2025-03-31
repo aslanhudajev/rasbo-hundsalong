@@ -54,7 +54,11 @@ eleventyNavigation:
                     <span class="cs-topper">Kontakt</span>
                     <h2 class="cs-title">Ta kontakt</h2>
                     <p class="cs-text">
-                        Har du frågor eller vill boka en tid? Hör av dig till oss! Vi hjälper dig med allt från kloklippning till pälsvård och utställningsklippning. Ring, mejla eller fyll i vårt kontaktformulär, så återkommer vi så snart som möjligt.
+                        Har du frågor eller vill boka en tid? Hör av dig till
+                        oss! Vi hjälper dig med allt från kloklippning till
+                        pälsvård och utställningsklippning. Ring, mejla eller
+                        fyll i vårt kontaktformulär, så återkommer vi så snart
+                        som möjligt.
                     </p>
                 </div>
                 <label>
@@ -123,13 +127,12 @@ eleventyNavigation:
                 <!--Address-->
                 <span class="cs-header">Adress</span>
                 <a class="cs-link" href="{{ client.address.mapLink }}">
-                    {{ client.address.lineOne }},
+                    {{ client.address.lineOne }}, {{ client.address.zip }}
                     <br />
                     <!-- {{ client.address.lineTwo }},
                     <br /> -->
                     <span class="cs-block">
                         {{ client.address.city }}<br />
-                        {{ client.address.state }}<br />
                         {{ client.address.zip }}
                     </span>
                 </a>

@@ -8,7 +8,7 @@
 @media only screen and (min-width: 0rem) {
     // Website colors
     :root {
-        --primary: #4ed42a;
+        --primary: #45b426;
         --primaryLight: #6ceb49;
         --secondary: #001f3f;
         --secondaryLight: #001f3f;
@@ -1282,8 +1282,8 @@
             .logo {
                 display: inline-block;
                 margin: auto;
-                margin-bottom: calc(30 / 16 * 1em);
-                height: calc(32 / 16 * 1em);
+                margin-bottom: 0;
+                height: 6.5em;
                 width: auto;
                 text-align: center;
 
@@ -1442,7 +1442,7 @@
 
             .logo {
                 margin-left: 0;
-                height: calc(40 / 16 * 1rem);
+                height: 7rem;
                 text-align: left;
             }
 
@@ -1699,18 +1699,23 @@
 .cs-logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    text-decoration: none; /* Remove underline from link */
+    gap: 0.5rem;
+    text-decoration: none;
     width: auto !important;
+    margin: 0;
+    padding: 0;
 }
 
 .cs-logo-text {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--headerColor, #1a1a1a);
-    white-space: nowrap; /* Prevent text from wrapping */
-    line-height: 1; /* Ensure single line height */
-    letter-spacing: -0.02em; /* Slightly tighter letter spacing for better integration */
+    white-space: nowrap;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
 
 /* Prevent hover effects that might come from the parent link */
